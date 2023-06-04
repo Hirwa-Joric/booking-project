@@ -1,0 +1,9 @@
+
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/CabinRegular.ttf"); font-family : "Cabin"; font-weight : 400;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/CabinBold.ttf"); font-family : "Cabin"; font-weight : 700;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RobotoRomanBlack.ttf"); font-family : "Roboto"; font-weight : 900;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RobotoRomanMedium.ttf"); font-family : "Roboto"; font-weight : 500;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/InterRegular.ttf"); font-family : "Inter"; font-weight : 400;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RalewayRomanExtraBold.ttf"); font-family : "Raleway"; font-weight : 800;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/RalewayRomanSemiBold.ttf"); font-family : "Raleway"; font-weight : 600;  }
+ @font-face { font-display: swap; font-style : normal; src: url("assets/fonts/IBMPlexSansRegular.ttf"); font-family : "IBM Plex Sans"; font-weight : 400;  }
