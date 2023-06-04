@@ -280,7 +280,7 @@ const CarInterfaceDarkModePage = () => {
                 </Text>
                 <input className="bg-white-A700 h-[70px] rounded-[10px] w-[77%]" type="text" />
               </div>
-              <div className="flex md:flex-col flex-row gap-3 items-center justify-between mt-[39px] w-[99%] md:w-full pl-45">
+              <div className="flex md:flex-col flex-row gap-3 items-center justify-between mt-[39px] w-[99%] md:w-full">
                 <Text
                   className="sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 "
                   size="txtCabinRegular25"
