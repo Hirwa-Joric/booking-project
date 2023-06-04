@@ -186,11 +186,11 @@ const CarInterfaceDarkModePage = () => {
                   SPECIFICATIONS
                 </Text>
                 <div className="h-[90px] md:h-[95px] mt-[17px] relative w-[97%] md:w-full">
-                  <Img
-                    className="absolute bottom-[0] h-[78px] inset-x-[0] mx-auto"
-                    src="images/img_group1.svg"
-                    alt="groupOne"
-                  />
+                <input
+                  className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
+                  type="number"
+                  alt="tyre"
+                />
                   <Text
                     className="absolute left-[11%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[0]"
                     size="txtCabinRegular25"
