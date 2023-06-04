@@ -274,7 +274,7 @@ const CarInterfaceDarkModePage = () => {
               >
                 WHERE TO FIND
               </Text>
-              <div className="flex md:flex-col flex-row gap-[18px] items-center justify-end mt-[57px] w-[85%] md:w-full">
+              <div className="flex md:flex-col flex-row gap-[28px] items-center justify-end mt-[57px] w-[85%] md:w-full ">
                 <Text className="sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 " size="txtCabinRegular25">
                   {"Name:"}{' '}
                 </Text>
