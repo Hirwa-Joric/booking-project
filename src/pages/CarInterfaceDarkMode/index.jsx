@@ -9,9 +9,15 @@ const CarInterfaceDarkModePage = () => {
   const [InputValueTyre, setInputValueTyre] = useState("");
   const [InputValueSeats, setInputValueSeats] = useState("");
   const [InputValuePrice, setInputValuePrice] = useState("");
-  const [InputValue, setInputValue] = useState("");
-  const [InputValue, setInputValue] = useState("");
-  console.log(InputValue)
+  const [InputValueColor, setInputValueColor] = useState("");
+  const [InputValueUse, setInputValueUse] = useState("");
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    setSelectedImage(URL.createObjectURL(file));
+  }
   return (
     <>
       <div className="bg-gray-900 flex flex-col font-cabin items-center justify-end mx-auto pt-0.5 w-full">
@@ -145,19 +151,29 @@ const CarInterfaceDarkModePage = () => {
             </div>
             <div className="flex md:flex-1 flex-col gap-[23px] items-center justify-start md:ml-[0] ml-[88px] w-[41%] md:w-full">
               <div className="flex md:flex-col flex-row gap-[31px] items-center justify-between w-full">
-                <div className="bg-white-A700 flex md:flex-1 flex-col gap-[11px] items-center justify-center p-[77px] md:px-10 sm:px-5 rounded-[10px] w-[46%] md:w-full">
-                  <Img
-                    className="h-10 mt-6 w-10"
-                    src="images/img_grid.svg"
-                    alt="grid"
-                  />
-                  <Text
-                    className="mb-[38px] md:text-2xl sm:text-[22px] text-[26px] text-blue-A700"
-                    size="txtCabinRegular26"
-                  >
-                    Upload Photo
-                  </Text>
-                </div>
+                    <div className="bg-white-A700 flex md:flex-1 flex-col gap-[11px] items-center justify-center p-[77px] md:px-10 sm:px-5 rounded-[10px] w-[56%] md:w-full">
+                      <label htmlFor="upload" className="cursor-pointer">
+                        <div className="h-[200px] w-full">
+                          {selectedImage ? (
+                            <img className="h-full w-full object-cover rounded" src={selectedImage} alt="uploaded" />
+                          ) : (
+                            <>
+                              <img className="h-10 mt-6 w-10" src="images/img_grid.svg" alt="grid" />
+                              <Text className="mb-[38px] md:text-2xl sm:text-[22px] text-[26px] text-blue-A700" size="txtCabinRegular26">
+                                Upload Photo
+                              </Text>
+                            </>
+                          )}
+                        </div>
+                      </label>
+                      <input
+                        id="upload"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleImageUpload}
+                      />
+                    </div>
                 <div className="flex md:flex-1 flex-col gap-[49px] items-center justify-start w-[51%] md:w-full">
                   <Input
                     name="groupSixtyThree"
@@ -197,88 +213,58 @@ const CarInterfaceDarkModePage = () => {
                 <div className="h-[90px] md:h-[95px] mt-[17px] relative w-[97%] md:w-full flex-col items-center justify-center" placeholder="Tyre">
                 <input
                   className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
-                  type="text"
+                  type="number"
                   style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
-                  value={InputValueTyre}
+                    value={InputValueTyre}
+                    placeholder="Tyre"
                   onChange={(e)=>setInputValueTyre(e.target.value)}
                 />
-                  <Text
-                    className="absolute left-[11%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[-4px]"
-                    size="txtCabinRegular25"
-                  >
-                    Tyre
-                  </Text>
                 </div>
                 <div className="h-[93px] md:h-[99px] mt-[21px] relative w-[97%] md:w-full">
                 <input
                   className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
-                  type="text"
+                  type="number"
                   style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
-                  value={InputValueSeats}
+                    value={InputValueSeats}
+                    placeholder="Seats"
                   onChange={(e)=>setInputValueSeats(e.target.value)}
                 />
-                  <Text
-                    className="absolute left-[10%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[0]"
-                    size="txtCabinRegular25"
-                  >
-                    Seats
-                  </Text>
                 </div>
                 <div className="h-[93px] md:h-[99px] mt-[21px] relative w-[97%] md:w-full">
                 <input
                   className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
                   type="text"
                   style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
-                  value={InputValuePrice}
+                    value={InputValuePrice}
+                    placeholder="Price"
                   onChange={(e)=>setInputValuePrice(e.target.value)}
                 />
-                  <Text
-                    className="absolute left-[10%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[0]"
-                    size="txtCabinRegular25"
-                  >
-                    Price
-                  </Text>
                 </div>
                 <div className="h-[93px] mt-[21px] relative w-[97%] md:w-full">
-                  <Text
-                    className="mb-[-15.3px] ml-[63px] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 z-[1]"
-                    size="txtCabinRegular25"
-                  >
-                    Color
-                  </Text>
                 <input
                   className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
                   type="text"
                   style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
-                  value={InputValueTyreSeats}
-                  onChange={(e)=>setInputValueTyreSeats(e.target.value)}
+                    value={InputValueColor}
+                    placeholder="Color"
+                  onChange={(e)=>setInputValueColor(e.target.value)}
                 />
                 </div>
                 <div className="h-24 mt-[21px] relative w-[97%] md:w-full">
-                  <Text
-                    className="mb-[-12.93px] ml-[67px] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 z-[1]"
-                    size="txtCabinRegular25"
-                  >
-                    Use
-                  </Text>
                   <div className="flex mt-auto mx-auto w-full">
-                    <Img
-                      className="h-[78px] my-auto rounded-[10px]"
-                      src="images/img_folder.svg"
-                      alt="folder"
-                    />
-                    <div
-                      className="bg-cover bg-no-repeat flex flex-col h-[78px] items-end justify-end ml-[-1px] my-auto p-[21px] sm:px-5 rounded-[10px] w-[91%] z-[1]"
-                      style={{
-                        backgroundImage: "url('images/img_group11.svg')",
-                      }}
+                    <select
+                      className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
+                      type="text"
+                      style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                      value={InputValueUse}
+                      placeholder="Use"
+                      onChange={(e)=>setInputValueUse(e.target.value)}
                     >
-                      <Img
-                        className="h-[18px] mb-[5px] mt-3"
-                        src="images/img_arrowdown.svg"
-                        alt="arrowdown"
-                      />
-                    </div>
+                      <option value="1" className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]">Costruction</option>
+                      <option value="2" className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]">entertainment</option>
+                      <option value="3" className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]">important meating</option>
+                      <option value="4" className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]">school treaps </option>
+                    </select>
                   </div>
                 </div>
               </div>
