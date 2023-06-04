@@ -1,8 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 
 import { Button, Img, Input, Line, List, Text } from "components";
 
 const CarInterfaceDarkModePage = () => {
+  const [InputValueName, setInputValueName] = useState("");
+  const [InputValueStreet, setInputValueStreet] = useState("");
+  const [InputValueDescription, setInputValueDescription] = useState("");
+  const [InputValueTyre, setInputValueTyre] = useState("");
+  const [InputValueSeats, setInputValueSeats] = useState("");
+  const [InputValuePrice, setInputValuePrice] = useState("");
+  const [InputValue, setInputValue] = useState("");
+  const [InputValue, setInputValue] = useState("");
+  console.log(InputValue)
   return (
     <>
       <div className="bg-gray-900 flex flex-col font-cabin items-center justify-end mx-auto pt-0.5 w-full">
@@ -185,25 +194,29 @@ const CarInterfaceDarkModePage = () => {
                 >
                   SPECIFICATIONS
                 </Text>
-                <div className="h-[90px] md:h-[95px] mt-[17px] relative w-[97%] md:w-full">
+                <div className="h-[90px] md:h-[95px] mt-[17px] relative w-[97%] md:w-full flex-col items-center justify-center" placeholder="Tyre">
                 <input
                   className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
-                  type="number"
-                  alt="tyre"
+                  type="text"
+                  style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValueTyre}
+                  onChange={(e)=>setInputValueTyre(e.target.value)}
                 />
                   <Text
-                    className="absolute left-[11%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[0]"
+                    className="absolute left-[11%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[-4px]"
                     size="txtCabinRegular25"
                   >
                     Tyre
                   </Text>
                 </div>
                 <div className="h-[93px] md:h-[99px] mt-[21px] relative w-[97%] md:w-full">
-                  <Img
-                    className="absolute bottom-[0] h-[78px] inset-x-[0] mx-auto"
-                    src="images/img_group1.svg"
-                    alt="groupSixtyFour"
-                  />
+                <input
+                  className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
+                  type="text"
+                  style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValueSeats}
+                  onChange={(e)=>setInputValueSeats(e.target.value)}
+                />
                   <Text
                     className="absolute left-[10%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[0]"
                     size="txtCabinRegular25"
@@ -212,11 +225,13 @@ const CarInterfaceDarkModePage = () => {
                   </Text>
                 </div>
                 <div className="h-[93px] md:h-[99px] mt-[21px] relative w-[97%] md:w-full">
-                  <Img
-                    className="absolute bottom-[0] h-[78px] inset-x-[0] mx-auto"
-                    src="images/img_group1.svg"
-                    alt="groupSixtyFive"
-                  />
+                <input
+                  className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
+                  type="text"
+                  style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValuePrice}
+                  onChange={(e)=>setInputValuePrice(e.target.value)}
+                />
                   <Text
                     className="absolute left-[10%] sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 top-[0]"
                     size="txtCabinRegular25"
@@ -231,11 +246,13 @@ const CarInterfaceDarkModePage = () => {
                   >
                     Color
                   </Text>
-                  <Img
-                    className="h-[78px] mt-auto mx-auto"
-                    src="images/img_group1.svg"
-                    alt="groupSixtySix"
-                  />
+                <input
+                  className="bg-white-A700 h-[70px] rounded-[10px] w-[100%]"
+                  type="text"
+                  style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValueTyreSeats}
+                  onChange={(e)=>setInputValueTyreSeats(e.target.value)}
+                />
                 </div>
                 <div className="h-24 mt-[21px] relative w-[97%] md:w-full">
                   <Text
@@ -278,7 +295,12 @@ const CarInterfaceDarkModePage = () => {
                 <Text className="sm:text-[21px] md:text-[23px] text-[25px] text-white-A700 " size="txtCabinRegular25">
                   {"Name:"}{' '}
                 </Text>
-                <input className="bg-white-A700 h-[70px] rounded-[10px] w-[77%]" type="text" />
+                <input className="bg-white-A700 h-[70px] rounded-[10px] w-[77%]"
+                  type="text"
+                  style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValueName}
+                  onChange={(e)=>setInputValueName(e.target.value)}
+                  />
               </div>
               <div className="flex md:flex-col flex-row gap-3 items-center justify-between mt-[39px] w-[99%] md:w-full">
                 <Text
@@ -287,7 +309,11 @@ const CarInterfaceDarkModePage = () => {
                 >
                   {"Street (Optional):"}{" "}
                 </Text>
-                <input className="bg-white-A700 h-[70px] rounded-[10px] w-[73%]" type="text"/>
+                <input className="bg-white-A700 h-[70px] rounded-[10px] w-[73%]" type="text"
+                  tyle={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValueStreet}
+                  onChange={(e)=>setInputValueStreet(e.target.value)}
+                />
               </div>
               <div className="flex flex-col justify-start mt-[41px] w-[96%] md:w-full">
                 <div className="flex md:flex-col flex-row gap-[27px] items-center justify-between md:ml-[0] ml-[5px] w-[98%] md:w-full">
@@ -297,7 +323,10 @@ const CarInterfaceDarkModePage = () => {
                   >
                     {"Description:"}
                   </Text>
-                  <textarea className="bg-white-A700 h-[150px] rounded-[10px] w-[77%] resize-none"></textarea>  
+                  <textarea className="bg-white-A700 h-[150px] rounded-[10px] w-[77%] resize-none"
+                  style={{ color: 'blue', placeholderTextColor: 'gray', fontSize: '28px', fontWeight: '900'  , fontStyle:"Sans-serif"}} 
+                  value={InputValueDescription}
+                  onChange={(e)=>setInputValueDescription(e.target.value)}></textarea>  
                 </div>
                 <div className="flex md:flex-col flex-row md:gap-14 items-center justify-between mt-[58px] w-full">
                   <Text
